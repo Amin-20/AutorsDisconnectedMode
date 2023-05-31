@@ -45,6 +45,7 @@ namespace WpfApp3.Repository
             {
                 var command = new SqlCommand("INSERT INTO Authors(Id,FirstName,LastName) VALUES(@id,@firstName,@lastName)", conn);
                 conn.ConnectionString = cs;
+                conn.Open();
 
                 command.Parameters.Add(new SqlParameter
                 {
@@ -69,7 +70,7 @@ namespace WpfApp3.Repository
 
                 var da = new SqlDataAdapter();
                 da.InsertCommand= command;
-                //da.InsertCommand.ExecuteNonQuery();
+                da.InsertCommand.ExecuteNonQuery();
                 da.Update(set, "AuthorsSet");
                 set.Clear();
 

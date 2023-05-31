@@ -48,8 +48,6 @@ namespace WpfApp3.ViewModels
         }
 
 
-
-
         public MainWindowViewModels()
         {
             AuthorsRepo = new Repo();
@@ -60,11 +58,6 @@ namespace WpfApp3.ViewModels
             {
                 AuthorsRepo.Insert(Id, Firstname, Lastname);
             });
-
-
-
-
-
 
         }
     }
